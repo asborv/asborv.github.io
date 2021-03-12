@@ -60,6 +60,7 @@ const c = {
       }
     }]
   }
+
 }
 
 Highcharts.chart("container", c);

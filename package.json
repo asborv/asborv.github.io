@@ -1,0 +1,27 @@
+{
+  "name": "highcharts-medier",
+  "version": "1.0.0",
+  "description": "Visulisering av mediebarometeret i Noreg",
+  "main": "index.html",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "csv-parser": "^3.0.0",
+    "fs": "0.0.1-security",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "browserify": "node ./node_modules/browserify/bin/cmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asborv/asborv.github.io.git"
+  },
+  "author": "Asbjørn Olav Orvedal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asborv/asborv.github.io/issues"
+  },
+  "homepage": "https://github.com/asborv/asborv.github.io#readme"
+}

@@ -1,3 +1,5 @@
+const randomise = document.getElementById("randomise");
+
 // link https://www.ssb.no/medie
 const mediaDist = [
   { papiravis: [84,77,30,27] },
@@ -63,11 +65,15 @@ const c = {
 
 }
 
+function chartRandom() {
+  Highcharts.chart("container", { ...c, series: Array(6).fill(0).map(p => ({
+    name: "ting",
+    data: Array(10).fill(0).map(t => Math.random() * 100)
+  }))});
+}
+
+
 Highcharts.chart("container", c);
 
-// setInterval(() => {
-//   Highcharts.chart("container", { ...c, series: Array(6).fill(0).map(p => ({
-//     name: "ting",
-//     data: Array(10).fill(0).map(t => Math.random() * 100)
-//   })) })
-// }, 2000);
+// Does not clear existing intervals
+randomise.addEventListener("click", () => setInterval(chartRandom, 2000))

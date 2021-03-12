@@ -1,8 +1,3 @@
-// link http://browserify.org/
-// link https://www.npmjs.com/package/csv-parser
-const csv = require("csv-parser");
-const fs = require("fs");
-
 // link https://www.ssb.no/medie
 const cs = `
 1991;2000;2018;2019;
@@ -17,19 +12,6 @@ Tegneserieblad;11;9;3;3;
 Serier/film/video;10;10;37;43;
 Internett;..;27;91;90;
 `;
-
-const results = [];
-
-fs.createReadStream('tabell.csv')
-  .pipe(csv({ headers: ["Prosent", "Prosent", "Prosent", "Prosent"] }))
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    console.log(results);
-    // [
-    //   { NAME: 'Daffy Duck', AGE: '24' },
-    //   { NAME: 'Bugs Bunny', AGE: '22' }
-    // ]
-  });
 /*
 link https://www.highcharts.com/demo/line-basic
 const c = {

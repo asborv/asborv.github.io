@@ -75,5 +75,5 @@ function chartRandom() {
 
 Highcharts.chart("container", c);
 
-
+// Does not clear existing intervals
 randomise.addEventListener("click", () => setInterval(chartRandom, 2000))

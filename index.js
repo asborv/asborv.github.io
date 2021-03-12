@@ -1,31 +1,28 @@
 // link https://www.ssb.no/medie
-const cs = `
-1991;2000;2018;2019;
-Papiravis;84;77;30;27;
-Fjernsyn;81;82;60;48;
-Radio;71;57;50;48;
-Lydmedier;43;50;51;55;
-Ukeblad;21;17;5;4;
-Bøker;24;20;24;25;
-Tidsskrift;18;14;6;7;
-Tegneserieblad;11;9;3;3;
-Serier/film/video;10;10;37;43;
-Internett;..;27;91;90;
-`;
-/*
-link https://www.highcharts.com/demo/line-basic
-const c = {
-  title: { text: "Tittel!" },
+const mediaDist = [
+  { papiravis: [84,77,30,27] },
+  { fjernsyn: [81,82,60,48,] },
+  { radio: [71,57,50,48,] },
+  { lydmedier: [43,50,51,55,] },
+  { Ukeblad: [21,17,5,4,] },
+  { bøker: [24,20,24,25,] },
+  { "serier/film/video": [10,10,37,43,] },
+  { internett: [0,27,91,90,] },
+];
 
-  subtitle: { text: "Undertittel" },
+// link https://www.highcharts.com/demo/line-basic
+const c = {
+  title: { text: "Medier i Noreg" },
+
+  subtitle: { text: "Prosentvis fordeling av medieforbruk 1991 - 2019" },
   
   yAxis: {
-    title: { text: "Mengde ting" }
+    title: { text: "Forbruk / %" }
   },
 
   xAxis: {
     accessibility: {
-      rangeDescription: "Ein gong til ein annan gong"
+      rangeDescription: "Range: 1991 to 2019"
     }
   },
 
@@ -38,20 +35,17 @@ const c = {
   plotOptions: {
     series: {
       label: { connectorAllowed: false },
-      pointStart: 100
+      pointStart: 1991,
     }
   },
 
-  series: [
-    {
-      name: "bruh",
-      data: [10, 12, 2]
-    } ,
-    {
-      name: "woah",
-      data: [10, 212, 2]
-    },
-  ]
+  // x-verdiar visast ikkje som dei skal, kvifor ikkje?
+  series: 
+    mediaDist.map((obj, i) => ({
+      name: Object.keys(obj)[0],
+      data: Object.values(obj)[0]
+    }))
+  
 }
 
 Highcharts.chart("container", c);
@@ -62,4 +56,3 @@ Highcharts.chart("container", c);
 //     data: Array(10).fill(0).map(t => Math.random() * 100)
 //   })) })
 // }, 2000);
-*/

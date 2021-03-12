@@ -44,8 +44,23 @@ const c = {
     mediaDist.map((obj, i) => ({
       name: Object.keys(obj)[0],
       data: Object.values(obj)[0]
-    }))
-  
+    })),
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 1000
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
 }
 
 Highcharts.chart("container", c);
